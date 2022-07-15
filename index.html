@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="logo">
+    </header>
+    <div class="instruction">
+        <div id="first">
+            <h1>👾Play the game !</h1>
+        </div>
+        <h1>You will play against an AI</h1>
+        <h1>So you will have three choices : Rock🗻 Paper📜 or Scissors✂</h1>
+    </div>
+    <div class="stats">
+        <div id="stats">
+            <h1>Your stats : (One game = 3 points)</h1>
+        </div>
+        <div class="game">
+            <h1 id="games">Games : 0</h1>
+            <h1 id="points">Points : 0</h1>
+        </div>
+    </div>
+
+    <div class="robotStats">
+        <div id="stats">
+            <h1>🤖Robot stats : (One game = 3 points)</h1>
+        </div>
+        <div class="game">
+            <h1 id="robotGames">Games : 0</h1>
+            <h1 id="robotPoints">Points : 0</h1>
+        </div>
+    </div>
+    <br>
+    <div class="content">
+        <div class="One" id="rock">
+            <img src="elements/Rock.png" alt="element" value="Rock">
+        </div>
+        <div class="Two" id="paper">
+            <img src="elements/Paper.png" alt="element" alue="Papper">
+        </div>
+        <div class="Three" id="scissors">
+            <img src="elements/Scissors.png" alt="element" value="Scissors">
+        </div>
+    </div>
+    <div class="res" id="result"></div>
+    </div>
+    <div class="reset" id="reset">
+        <button>Reset</button>
+    </div>
+</body>
