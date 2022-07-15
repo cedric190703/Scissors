@@ -38,7 +38,7 @@ function Lose () {
 }
 
 function Rock () {
-    if(gameCpt == 3) {
+    if(gameCpt == 3 || robotG == 3) {
         Reset();
     }
     let AI = getAiChoice();
@@ -80,7 +80,7 @@ function Rock () {
 }
 
 function Papper () {
-    if(gameCpt == 3) {
+    if(gameCpt == 3 || robotG == 3) {
         Reset();
     }
     let AI = getAiChoice();
@@ -122,7 +122,7 @@ function Papper () {
 }
 
 function Scissors () {
-    if(gameCpt == 3) {
+    if(gameCpt == 3 || robotG == 3) {
         Reset();
     }
     let AI = getAiChoice();

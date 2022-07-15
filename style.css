@@ -143,3 +143,67 @@ header img:hover {
     background-color: rgba(0, 0, 0, 0.499);
     margin: 0 25% 5%;
 }
+
+@media screen and (max-width: 1700px) {
+    .content img{
+        width: 90%;
+        height: 300px;
+    }
+
+    .content {
+        margin-left: 22%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .content img{
+        width: 80%;
+        height: 150px;
+    }
+
+    .content {
+        margin-left: 22%;
+    }
+
+    h1 ,
+    .robotStats h1,
+    .stats h1,
+    #stats h1,
+    #robotStats h1,
+    .reset button{
+        font-size: x-large;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    h1 ,
+    .robotStats h1,
+    .stats h1,
+    #stats h1,
+    #robotStats h1,
+    .reset button{
+        font-size: large;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .content img{
+        width: 80%;
+        height: 100px;
+    }
+
+    .content {
+        margin-left: 22%;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    h1 ,
+    .robotStats h1,
+    .stats h1,
+    #stats h1,
+    #robotStats h1,
+    .reset button{
+        font-size: medium;
+    }
+}
