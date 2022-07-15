@@ -3,13 +3,11 @@ let points = document.getElementById("points");
 let robotGames = document.getElementById("robotGames");
 let robotPoints = document.getElementById("robotPoints");
 
-console.log(robotGames,robotPoints)
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 
 const result = document.getElementById("result");
-
 
 let gameCpt = 0;
 let pointCpt = 0;
@@ -28,16 +26,22 @@ function getAiChoice () {
 }
 
 function Win () {
-
+    result.style.color = "green";
+    alert("You've won this game !!");
+    result.innerHTML = `<h1>You've won this game !!</h1><div id="stats"><h1>Your stats : (One game = 3 points)</h1></div><div class="game"><h1 id="games">Games : ${gameCpt}</h1><h1 id="points">Points : ${pointCpt}</h1></div>`;
 }
 
 function Lose () {
-
+    result.style.color = "red";
+    alert("You've lost this game !!");
+    result.innerHTML = `<h1>You've lost this game !!</h1><div id="stats"><h1>Your stats : (One game = 3 points)</h1></div><div class="game"><h1 id="games">Games : ${gameCpt}</h1><h1 id="points">Points : ${pointCpt}</h1></div>`;
 }
 
 function Rock () {
+    if(gameCpt == 3) {
+        Reset();
+    }
     let AI = getAiChoice();
-    console.log("Hello",AI);
     switch(AI) {
         case(0):
             result.innerHTML = `<h1>You : ${elements[0]} / 🤖 : ${elements[0]}</h1><h1>It's a tie on this point</h1>`;
@@ -47,7 +51,7 @@ function Rock () {
             if(robotP > 3) {
                 robotP = 0;
                 robotG++;
-                if(robotG > 3) {
+                if(robotG == 3) {
                     Lose();
                 }
             }
@@ -60,7 +64,7 @@ function Rock () {
             if(pointCpt > 3) {
                 pointCpt = 0;
                 gameCpt++;
-                if(gameCpt > 3) {
+                if(gameCpt == 3) {
                     Win();
                 }
             }
@@ -76,6 +80,9 @@ function Rock () {
 }
 
 function Papper () {
+    if(gameCpt == 3) {
+        Reset();
+    }
     let AI = getAiChoice();
     switch(AI) {
         case(0):
@@ -83,7 +90,7 @@ function Papper () {
             if(pointCpt > 3) {
                 pointCpt = 0;
                 gameCpt++;
-                if(gameCpt > 3) {
+                if(gameCpt == 3) {
                     Win();
                 }
             }
@@ -99,7 +106,7 @@ function Papper () {
             if(robotP > 3) {
                 robotP = 0;
                 robotG++;
-                if(robotG > 3) {
+                if(robotG == 3) {
                     Lose();
                 }
             }
@@ -115,6 +122,9 @@ function Papper () {
 }
 
 function Scissors () {
+    if(gameCpt == 3) {
+        Reset();
+    }
     let AI = getAiChoice();
     switch(AI) {
         case(0):
@@ -122,7 +132,7 @@ function Scissors () {
             if(robotP > 3) {
                 robotP = 0;
                 robotG++;
-                if(robotG > 3) {
+                if(robotG == 3) {
                     Lose();
                 }
             }
@@ -135,7 +145,7 @@ function Scissors () {
             if(pointCpt > 3) {
                 pointCpt = 0;
                 gameCpt++;
-                if(gameCpt > 3) {
+                if(gameCpt == 3) {
                     Win();
                 }
             }
@@ -154,15 +164,17 @@ function Scissors () {
 }
 
 function Reset () {
+    console.log("Hey")
     gameCpt = 0;
     pointCpt = 0;
     robotG = 0;
     robotP = 0;
     games.innerHTML = `Games : 0`;
     points.innerHTML = `Points : 0`;
-    robotGames.innerHTML `Games : 0`;
+    robotGames.innerHTML = "Games : 0";
     robotPoints.innerHTML = `Points : 0`;
+    result.style.color = "white";
 }
 
 const reset = document.getElementById("reset");
-reset.addEventListener("click",reset);
+reset.addEventListener("click",Reset);
